@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -30,6 +31,17 @@ public class JobTest {
         Job test_job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse( test_job1.getId() == test_job2.getId());
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(test_job.getName(), "Product tester");
+        String firstChar = String.valueOf(test_job.toString().charAt(0));
+        String lastChar = String.valueOf(test_job.toString().charAt(test_job.toString().length()-1));
+        assertEquals(firstChar, lineSeparator());
+        assertEquals(lastChar, lineSeparator());
+    }
+
 
 
 }

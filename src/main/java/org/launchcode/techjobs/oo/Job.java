@@ -1,6 +1,10 @@
 package org.launchcode.techjobs.oo;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import java.util.Objects;
+
+import static java.lang.System.lineSeparator;
 
 public class Job {
 
@@ -94,4 +98,9 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
+    //To String Method
+    public String toString() {
+        return lineSeparator() + lineSeparator();
+    }
 }
