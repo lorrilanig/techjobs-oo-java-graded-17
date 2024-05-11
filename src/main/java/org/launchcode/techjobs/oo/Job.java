@@ -100,7 +100,21 @@ public class Job {
     //  and id.
 
     //To String Method
+    @Override
     public String toString() {
-        return lineSeparator() + lineSeparator();
+
+        return lineSeparator() +
+                "ID: " + id +
+                "\n" +
+                "Name: " + name +
+                "\n" +
+                "Employer: " + (employer != null && !employer.getValue().isEmpty() ? employer : "Data not available") +
+                "\n" +
+                "Location: " + (location != null && !location.getValue().isEmpty() ? location : "Data not available") +
+                "\n" +
+                "Position Type: " + (positionType != null && !positionType.getValue().isEmpty() ? positionType : "Data not available") +
+                "\n" +
+                "Core Competency: " + coreCompetency
+                 + lineSeparator();
     }
 }

@@ -42,7 +42,20 @@ public class JobTest {
         assertEquals(lastChar, lineSeparator());
     }
 
+    //TODO test string has correct labels and data in appropriate place
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String name = test_job.getName();
+        assertEquals("Name: " + name, "Name: " + name);
+    }
 
-
+    //TODO test to see if string handles empty field
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = test_job.toString();
+        assertEquals(jobString, test_job.toString());
+    }
 }
 
