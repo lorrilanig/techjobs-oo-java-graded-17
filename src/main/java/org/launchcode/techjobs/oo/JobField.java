@@ -1,0 +1,24 @@
+package org.launchcode.techjobs.oo;
+
+abstract class JobField {
+    private int id;
+    private static int nextId = 1;
+    private String value;
+
+    public JobField() {
+        id = nextId;
+        nextId++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+}
